@@ -1,0 +1,183 @@
+\begin{thebibliography}{24}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Arora et~al.(2017)Arora, Liang, and Ma}]{Arora2017}
+Sanjeev Arora, Yingyu Liang, and Tengyu Ma. 2017.
+\newblock \href {https://openreview.net/pdf?id=SyK00v5xx} {A simple but
+  tough-to-beat baseline for sentence embeddings}.
+\newblock \emph{5th International Conference on Learning Representations, ICLR
+  2017}.
+
+\bibitem[{Bowman et~al.(2015)Bowman, Angeli, Potts, and Manning}]{Bowman2015}
+Samuel~R. Bowman, Gabor Angeli, Christopher Potts, and Christopher~D. Manning.
+  2015.
+\newblock A large anno-tated corpus for learning natural language inference.
+\newblock \emph{Proceedings of the 2015 Conference on Empirical Methods in
+  Natural Language Processing}, pages 632--642.
+\newblock \url{https://nlp.stanford.edu/projects/snli/}.
+
+\bibitem[{Cer et~al.(2017)Cer, Diab, Agirre, Lopez-Gazpio, and
+  Specia}]{Cer2017}
+Daniel Cer, Mona Diab, Eneko Agirre, Iigo Lopez-Gazpio, and Lucia Specia. 2017.
+\newblock Semeval-2017 task 1: Semantic textual similarity multilingual and
+  crosslingual focused evaluation.
+\newblock \emph{Proceedings of the 11th International Workshop on Semantic
+  Evaluation}, pages 1--14.
+\newblock \url{https://github.com/brmson/dataset-sts}.
+
+\bibitem[{Conneau and Kiela(2018)}]{Conneau2018}
+Alexis Conneau and Douwe Kiela. 2018.
+\newblock \href {https://aclanthology.org/L18-1269/} {Senteval: An evaluation
+  toolkit for universal sentence representations}.
+\newblock In \emph{Proceedings of the Eleventh International Conference on
+  Language Resources and Evaluation (LREC 2018)}.
+\newblock \url{https://github.com/facebookresearch/SentEval}.
+
+\bibitem[{Cui et~al.(2022)Cui, Ma, Zhou, Zhou, and Yang}]{Cui2022}
+Zeyu Cui, Jianxin Ma, Chang Zhou, Jingren Zhou, and Hongxia Yang. 2022.
+\newblock \href {https://arxiv.org/abs/2205.08084} {M6-rec: Generative
+  pretrained language models are open-ended recommender systems}.
+
+\bibitem[{de~Souza Pereira~Moreira et~al.(2018)de~Souza Pereira~Moreira,
+  Ferreira, and da~Cunha}]{deSouza2018}
+Gabriel de~Souza Pereira~Moreira, Felipe Ferreira, and Adilson~Marques
+  da~Cunha. 2018.
+\newblock \href {https://doi.org/10.1145/3270323.3270328} {News session-based
+  recommendations using deep neural networks}.
+\newblock In \emph{Proceedings of the 3rd Workshop on Deep Learning for
+  Recommender Systems}, DLRS 2018, pages 15--23, New York, NY, USA. Association
+  for Computing Machinery.
+
+\bibitem[{Devlin et~al.(2019)Devlin, Chang, Lee, and Toutanova}]{Devlin2019}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019.
+\newblock Bert: Pre-training of deep bidirectional transformers for language
+  understanding.
+\newblock In \emph{Proceedings of NAACL-HLT 2019}.
+
+\bibitem[{Dietz et~al.(2017)Dietz, Verma, Radlinski, and Craswell}]{TREC-CAR}
+Laura Dietz, Manisha Verma, Filip Radlinski, and Nick Craswell. 2017.
+\newblock Trec complex answer retrieval overview.
+\newblock \emph{Proceedings of {Text REtrieval Conference} (TREC)}.
+\newblock \url{http://trec-car.cs.unh.edu/}.
+
+\bibitem[{Djuric et~al.(2015)Djuric, Wu, Radosavljevic, Grbovic, and
+  Bhamidipati}]{Djuric2015}
+Nemanja Djuric, Hao Wu, Vladan Radosavljevic, Mihajlo Grbovic, and Narayan
+  Bhamidipati. 2015.
+\newblock \href {https://doi.org/10.1145/2736277.2741643} {Hierarchical neural
+  language models for joint representation of streaming documents and their
+  content}.
+\newblock In \emph{Proceedings of the 24th International Conference on World
+  Wide Web}, WWW '15, page 248–255, Republic and Canton of Geneva, CHE.
+  International World Wide Web Conferences Steering Committee.
+
+\bibitem[{Dor et~al.(2018)Dor, Mass, Halfon, Venezian, Shnayderman, Aharonov,
+  and Slonim}]{Dor2018}
+Liat~Ein Dor, Yosi Mass, Alon Halfon, Elad Venezian, Ilya Shnayderman, Ranit
+  Aharonov, and Noam Slonim. 2018.
+\newblock Learning thematic similarity metric from article sections using
+  triplet networks.
+\newblock \emph{Proceedings of the 56th Annual Meeting of the As- sociation for
+  Computational Linguistics}, 2:49--54.
+\newblock \url{https://research.ibm.com/haifa/dept/vst/debating_data.shtml}.
+
+\bibitem[{Johnson et~al.(2017)Johnson, Douze, and Jegou}]{faiss}
+Jeff Johnson, Matthijs Douze, and Herve Jegou. 2017.
+\newblock Billion-scale similarity search with gpus.
+\newblock \emph{arXiv preprint arXiv:1702.08734}.
+\newblock \url{https://github.com/facebookresearch/faiss}.
+
+\bibitem[{Khattab()}]{okhat2020}
+Omar Khattab.
+\newblock \href {https://github.com/stanford-futuredata/ColBERT/issues/16}
+  {Question about query augmentation}.
+
+\bibitem[{Khattab and Zaharia(2020)}]{ColBERT}
+Omar Khattab and Matei Zaharia. 2020.
+\newblock \href {https://dl.acm.org/doi/10.1145/3397271.3401075} {Colbert:
+  Efficient and effective passage search via contextualized late interaction
+  over bert}.
+\newblock In \emph{SIGIR '20: Proceedings of the 43rd International ACM SIGIR
+  Conference on Research and Development in Information Retrieval}, pages
+  39--48.
+
+\bibitem[{Malkiel et~al.(2020)Malkiel, Barkan, Caciularu, Razin, Katz, and
+  Koenigstein}]{Malkiel2020}
+Itzik Malkiel, Oren Barkan, Avi Caciularu, Noam Razin, Ori Katz, and Noam
+  Koenigstein. 2020.
+\newblock \href {https://aclanthology.org/2020.findings-emnlp.154/} {Recobert:
+  A catalog language model for text-based recommendations}.
+\newblock pages 1704--1714.
+
+\bibitem[{Misra et~al.(2016)Misra, Ecker, and Walker}]{Misra2016}
+Amita Misra, Brian Ecker, and Marilyn~A. Walker. 2016.
+\newblock Measuring the similarity of sentential arguments in dialogue.
+\newblock \emph{Proceedings of the SIGDIAL 2016 Conference, The 17th Annual
+  Meeting of the Special Interest Group on Discourse and Dialogue}, pages
+  276--287.
+\newblock \url{https://nlds.soe.ucsc.edu/node/44}.
+
+\bibitem[{Moindrot(2018)}]{triplepairs}
+Olivier Moindrot. 2018.
+\newblock \href {https://omoindrot.github.io/triplet-loss} {Triplet loss and
+  online triplet mining in tensorflow}.
+
+\bibitem[{Nguyen et~al.(2016)Nguyen, Rosenberg, Song, Gao, Tiwary, Majumder,
+  and Deng}]{MSMarco}
+Tri Nguyen, Mir Rosenberg, Xia Song, Jianfeng Gao, Saurabh Tiwary, Rangan
+  Majumder, and Li~Deng. 2016.
+\newblock \href
+  {https://www.microsoft.com/en-us/research/publication/ms-marco-human-generated-machine-reading-comprehension-dataset/}
+  {MS MARCO: A Human-Generated MAchine Reading COmprehension Dataset}.
+
+\bibitem[{Nogueira and Cho(2019)}]{Nogueira2019}
+Rodrigo Nogueira and Kyunghyun Cho. 2019.
+\newblock \href {https://arxiv.org/abs/1901.04085} {Passage re-ranking with
+  bert}.
+\newblock \emph{arXiv preprint arXiv:1901.04085}.
+
+\bibitem[{Pennington et~al.(2014)Pennington, Socher, and Manning}]{GloVe}
+Jeffrey Pennington, Richard Socher, and Christopher Manning. 2014.
+\newblock \href {https://doi.org/10.3115/v1/D14-1162} {{G}lo{V}e: Global
+  vectors for word representation}.
+\newblock In \emph{Proceedings of the 2014 Conference on Empirical Methods in
+  Natural Language Processing ({EMNLP})}, pages 1532--1543, Doha, Qatar.
+  Association for Computational Linguistics.
+
+\bibitem[{Reimers and Gurevych(2019)}]{Reimers2019}
+Nils Reimers and Iryna Gurevych. 2019.
+\newblock \href {https://arxiv.org/abs/1908.10084} {Sentence-bert: Sentence
+  embeddings using siamese bert-networks}.
+\newblock In \emph{Proceedings of the 2019 Conference on Empirical Methods in
+  Natural Language Processing}. Association for Computational Linguistics.
+
+\bibitem[{Schroff et~al.(2015)Schroff, Kalenichenko, and Philbin}]{FaceNet}
+Florian Schroff, Dmitry Kalenichenko, and James Philbin. 2015.
+\newblock \href {https://doi.org/10.1109/CVPR.2015.7298682} {Facenet: A unified
+  embedding for face recognition and clustering}.
+\newblock In \emph{2015 IEEE Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, pages 815--823.
+
+\bibitem[{Williams et~al.(2018)Williams, Nangia, and Bowman}]{Williams2018}
+Adina Williams, Nikita Nangia, and Samuel Bowman. 2018.
+\newblock A broad-coverage challenge corpus for sentence understanding through
+  inference.
+\newblock \emph{Proceedings of the 2018 Conference of the North American
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies}, 1:1112--1122.
+\newblock \url{https://cims.nyu.edu/~sbowman/multinli/}.
+
+\bibitem[{zackthoutt(2017)}]{kagglewine}
+zackthoutt. 2017.
+\newblock Wine reviews.
+\newblock \url{https://www.kaggle.com/datasets/zynicide/wine-reviews}.
+
+\bibitem[{Zheng et~al.(2017)Zheng, Noroozi, and Yu}]{Zheng2017}
+Lei Zheng, Vahid Noroozi, and Philip~S. Yu. 2017.
+\newblock \href {https://doi.org/10.1145/3018661.3018665} {Joint deep modeling
+  of users and items using reviews for recommendation}.
+\newblock In \emph{Proceedings of the Tenth ACM International Conference on Web
+  Search and Data Mining}, WSDM '17, pages 425--434, New York, NY, USA.
+  Association for Computing Machinery.
+
+\end{thebibliography}

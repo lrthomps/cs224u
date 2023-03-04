@@ -1,0 +1,109 @@
+% This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended.
+\pdfoutput=1
+% In particular, the hyperref package requires pdfLaTeX in order to break URLs across lines.
+
+\documentclass[11pt]{article}
+
+% Remove the "review" option to generate the final version.
+\usepackage[]{acl}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
+\usepackage[T1]{fontenc}
+% For Vietnamese characters
+% \usepackage[T5]{fontenc}
+% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+% This is not strictly necessary, and may be commented out,
+% but it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+
+% If the title and author information does not fit in the area allocated, uncomment the following
+%
+%\setlength\titlebox{<dim>}
+%
+% and set <dim> to something 5cm or larger.
+
+\title{Template for CS224u experiment protocols}
+
+% Author information can be set in various styles:
+% For several authors from the same institution:
+% \author{Author 1 \and ... \and Author n \\
+%         Address line \\ ... \\ Address line}
+% if the names do not fit well on one line use
+%         Author 1 \\ {\bf Author 2} \\ ... \\ {\bf Author n} \\
+% For authors from different institutions:
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \And  ... \And
+%         Author n \\ Address line \\ ... \\ Address line}
+% To start a seperate ``row'' of authors use \AND, as in
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \AND
+%         Author 2 \\ Address line \\ ... \\ Address line \And
+%         Author 3 \\ Address line \\ ... \\ Address line}
+
+\author{First Author \\
+  Affiliation / Address \\
+  \texttt{email@domain} \\\And
+  Second Author \\
+  Affiliation / Address  \\  
+  \texttt{email@domain} \\\And
+  Third Author \\
+  Affiliation / Address \\  
+  \texttt{email@domain}
+}
+
+\begin{document}
+
+\maketitle
+
+\section*{Notes}
+
+The section headings below correspond to the required sections of the experiment protocol. 
+
+In addition, you need to be sure to cite papers in a way that has them show up in the references with at least full author name(s), year of publication, title, and outlet if applicable (e.g., journal name or proceedings name). Electronic references are fine but need to include the above information in addition to the link.
+
+You are free to include additional sections as well as appendices. However, keep in mind that experiment protocols are not intended to be long documents. The goal is to help you establish for yourself what your full project will look like and expose any blockers that might prevent your project from succeeding. 
+
+The protocol document is also very useful as a basis for discussion with your project mentor concerning scope, missing pieces, and areas of concern relating to time, resources, concepts, and anything else that might come up.
+
+\section{Hypotheses} 
+
+A statement of the project's core hypothesis or hypotheses.
+
+\section{Data}
+
+A description of the dataset(s) that the project will use for evaluation.
+
+\section{Metrics} 
+
+A description of the metrics that will form the basis for evaluation. We require at least one of these to be quantitative metrics, but we are very open-minded about which ones you choose. In requiring this, we are not saying that all work in NLU needs to be evaluated quantitatively, but rather just that we think it is a healthy requirement for our course.
+
+\section{Models} 
+
+A description of the models that you'll be using as baselines, and a preliminary description of the model or models that will be the focus of your investigation. At this early stage, some aspects of these models might not yet be worked out, so preliminary descriptions are fine.
+
+\section{General Reasoning} 
+
+An explanation of how the data and models come together to inform your core hypothesis or hypotheses.
+
+\section{Summary of Progress} 
+
+What you have been done, what you still need to do, and any obstacles or concerns that might prevent your project from coming to fruition.
+
+\bibliography{project}
+
+\appendix
+
+\section{Example Appendix}\label{sec:appendix}
+
+This is an appendix.
+
+\end{document}
