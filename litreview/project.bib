@@ -12,7 +12,7 @@
 
 
 @Article{Dor2018,
-  author="Liat Ein Dor and Yosi Mass and Alon Halfon and Elad Venezian and Ilya Shnayderman and Ranit Aharonov and Noam Slonim",
+  author="Liat Ein Dor and Yosi Mass and Alon Halfon and Elad Venezian and others",
   title="Learning Thematic Similarity Metric from Article Sections Using Triplet Networks",
   journal="Proceedings of the 56th Annual Meeting of the As- sociation for Computational Linguistics",
   volume="2",
@@ -99,7 +99,7 @@
 }
 
 @inproceedings{Malkiel2020,
-author = {Malkiel, Itzik and Barkan, Oren and Caciularu, Avi and Razin, Noam and Katz, Ori and Koenigstein, Noam},
+author = {Malkiel, Itzik and Barkan, Oren and Caciularu, Avi and Razin, Noam and other},
 year = {2020},
 booktitleaddon  = "Findings of the Association for Computational Linguistics: EMNLP 2020",
 month = {9},
@@ -117,7 +117,7 @@ url             = {https://aclanthology.org/2020.findings-emnlp.154/},
 
 @article{Cui2022,
   author          = {Zeyu Cui and Jianxin Ma and Chang Zhou and Jingren Zhou and Hongxia Yang},
-  journal         = {},
+  journal         = {arXiv preprint arXiv:2205.08084},
   number          = {},
   title           = {M6-Rec: Generative Pretrained Language Models are Open-Ended Recommender Systems},
   volume          = {},
@@ -134,7 +134,7 @@ url             = {https://aclanthology.org/2020.findings-emnlp.154/},
 }
 
 @article{MSMarco,
-  author          = {Tri Nguyen and Mir Rosenberg and Xia Song and Jianfeng Gao and Saurabh Tiwary and Rangan Majumder and Li Deng},
+  author          = {Tri Nguyen and Mir Rosenberg and Xia Song and Jianfeng Gao and other},
   volume          = {MS MARCO: A Human-Generated MAchine Reading COmprehension Dataset},
   year            = {2016},
   url = {https://www.microsoft.com/en-us/research/publication/ms-marco-human-generated-machine-reading-comprehension-dataset/},
@@ -254,7 +254,7 @@ series = {WWW '15}
 }
 
 @misc{kagglewine,
-  author       = {zackthoutt},
+  author       = {zackthoutt@Kaggle},
   howpublished = {\url{https://www.kaggle.com/datasets/zynicide/wine-reviews}},
   title        = {Wine Reviews},
   year         = {2017}
@@ -262,4 +262,68 @@ series = {WWW '15}
 
 @misc{expertwine,
   note="See the author's github page for this paper, \url{https://github.com/r-papso/recobert}"
+}
+
+@article{M6,
+  author          = {Junyang Lin and Rui Men and An Yang and Chang Zhou and others},
+  journal         = {arXiv preprint arXiv:2103.00823},
+  number          = {},
+  title           = {M6: A Chinese Multimodal Pretrainer},
+  volume          = {},
+  year            = {2021}
+}
+
+PromptTuning
+@inproceedings{PromptTuning,
+    title = "The Power of Scale for Parameter-Efficient Prompt Tuning",
+    author = "Lester, Brian  and
+      Al-Rfou, Rami  and
+      Constant, Noah",
+    booktitle = "Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing",
+    year = "2021",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.emnlp-main.243",
+    doi = "10.18653/v1/2021.emnlp-main.243",
+    pages = "3045--3059",
+}
+
+@inproceedings{Adaptation,
+  author          = {Edward J Hu and yelong shen and Phillip Wallis and Zeyuan Allen-Zhu and other},
+  booktitle       = {ICLR 2022},
+  editor          = {},
+  title           = {LoRA: Low-Rank Adaptation of Large Language Models },
+  year            = {2022}
+}
+
+@inproceedings{DIN,
+  author          = {Guorui Zhou and Chengru Song and Xiaoqiang Zhu and other},
+  booktitle       = {KDD 2018},
+  editor          = {},
+  title           = {Deep Interest Network for Click-Through Rate Prediction},
+  year            = {2018}
+}
+
+@misc{StitchFixClientTime,
+  title = "Client Time Series Model: a Multi-Target Recommender System based on Temporally-Masked Encoders",
+  author = "Kevin Zielnicki and Dirk Sierag and Patrick Foley",
+  month = "October",
+  year = "2022",
+  url = "https://multithreaded.stitchfix.com/blog/2022/10/14/client-time-series-model/"
+  }
+
+@inproceedings{Steed2022-upstream,
+    title = "{U}pstream {M}itigation {I}s \textit{ {N}ot} {A}ll {Y}ou {N}eed: {T}esting the {B}ias {T}ransfer {H}ypothesis in {P}re-{T}rained {L}anguage {M}odels",
+    author = "Steed, Ryan  and
+      Panda, Swetasudha  and
+      Kobren, Ari  and
+      Wick, Michael",
+    booktitle = "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = may,
+    year = "2022",
+    address = "Dublin, Ireland",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.acl-long.247",
+    doi = "10.18653/v1/2022.acl-long.247",
+    pages = "3524--3542",
+    abstract = "A few large, homogenous, pre-trained models undergird many machine learning systems {---} and often, these models contain harmful stereotypes learned from the internet. We investigate the \textit{bias transfer hypothesis}: the theory that social biases (such as stereotypes) internalized by large language models during pre-training transfer into harmful task-specific behavior after fine-tuning. For two classification tasks, we find that reducing intrinsic bias with controlled interventions \textit{before} fine-tuning does little to mitigate the classifier{'}s discriminatory behavior \textit{after} fine-tuning. Regression analysis suggests that downstream disparities are better explained by biases in the fine-tuning dataset. Still, pre-training plays a role: simple alterations to co-occurrence rates in the fine-tuning dataset are ineffective when the model has been pre-trained. Our results encourage practitioners to focus more on dataset quality and context-specific harms.",
 }
