@@ -1,0 +1,117 @@
+% This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended.
+\pdfoutput=1
+% In particular, the hyperref package requires pdfLaTeX in order to break URLs across lines.
+
+\documentclass[11pt]{article}
+
+% Remove the "review" option to generate the final version.
+\usepackage[]{acl}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{amsmath}
+
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
+\usepackage[T1]{fontenc}
+% For Vietnamese characters
+% \usepackage[T5]{fontenc}
+% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+% This is not strictly necessary, and may be commented out,
+% but it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+\usepackage[hang,flushmargin]{footmisc}
+
+
+\title{CS224u experiment protocol}
+
+\author{Lara Thompson \\
+  Principle Data Scientist @ Salesforce \\
+  \texttt{lara.thompson@salesforce.com} \\ \\
+  \today
+}
+
+\begin{document}
+
+\maketitle
+
+% \section*{Notes}
+
+% This is a short, structured report designed to help you establish your core experimental framework. The required sections are as follows.
+
+% You are free to include additional sections as well as appendices. However, keep in mind that experiment protocols are not intended to be long documents. The goal is to help you establish for yourself what your full project will look like and expose any blockers that might prevent your project from succeeding. 
+
+% The protocol document is also very useful as a basis for discussion with your project mentor concerning scope, missing pieces, and areas of concern relating to time, resources, concepts, and anything else that might come up.
+
+\section{Hypotheses} 
+
+The central hypothesis of my project is that richer recommendations will result if user reviews/comments and item descriptions are included among the user and item features using a large language model (LLM) to encode them semantically.
+
+A few questions I want to answer along the way include:
+\begin{itemize}
+  \item How rich can "a simple baseline" sentence embeddings \cite{Arora2017} be using encodings from an LLM (e.g. BERT) instead of GLoVe embeddings that lack context? If the early layers of BERT can be used, with early exiting a system such a system could be far more lightweight than a full LLM-based system, such as Sentence BERT \cite{Reimers2019}. 
+  \item How much lift does fine-tuning the sentence embeddings give the recommender?
+  \item Can the same sentence embeddings be used to encode item and user features?
+  \item Can user embeddings be optimized separately from item embeddings when text features are included?
+\end{itemize}
+
+\section{Data}
+
+To evaluate sentence embeddings I will test with the task-specific datasets from GLUE \cite{GLUE}.
+
+To evaluate the recommender system as a whole, I will choose two from: 
+\begin{itemize}
+  \item wine reviews dataset from RecoBERT \cite{Malkiel2020}
+  \item a book reviews dataset that includes the social connections from LibraryThing \cite{LibraryThing}
+  \item a massive GoodReads dataset \cite{GoodReads}
+  \item a Beer review dataset with additional features \cite{Beer}
+  \item a climbing log dataset from \href{https://www.sendage.com}{sendage.com}, a site that allows climbers to log, rate, grade, comment on and offer beta for climbs they've sent\footnote[1]{"Beta" is the specific sequence of moves to ascend cleanly, aka "send".}; climbs have a description and location
+\end{itemize}
+I'll use whichever datasets prove easiest to load and process given the short time frame.
+
+\section{Metrics} 
+
+GLUE tasks each have a standard metric that I'll use (accuracy, F1, and a mix of Pearson, Spearman and Matthews correlations). 
+
+Metrics relevant to evaluate a recommender system are precision, recall and coverage. Personalization is important to assess as well: it is often modelled as the average (cosine) distance between user recommendation vectors.
+
+\section{Models} 
+
+To embed the text fields in as frugal a manner possible, I'll try "a simple" sentence embeddings with increasingly complex LLM encodings, and compare them with BERT-base and SBERT-base.
+
+As recommender baselines, I'll use a pure popularity-based recommender ("everyone likes ***"), and simple user-item collaborative filtering ("you liked *, and users who also liked * tend to like ***"). 
+
+A recommender based solely on sentence embeddings uses content-based filtering ("you liked * which is similar to ***"), as in RecoBert \cite{Malkiel2020}.
+
+User-item interactions can be expressed as an unordered set, or as a sequence if there's a time ordering, in analogy to bag-of-words vs text sequences in NLP. The transformer architecture was adapted to recommenders in Transformers2Rec \cite{Transformers4Rec}; adding user and item features is easy in this model architecture. These are trained to predict masked items in a set/sequence or to predict the next item in a sequence, similar to large language modelling.
+
+\section{General Reasoning} 
+
+I'll assess sentence embeddings primarily on how well they can be used for sentiment analysis and detecting semantic similarity. Simpler is better as I want a lean yet performant system. If I must use BERT fully I'll try to frame my system to allow as much pre-computation as possible.
+
+As baseline recommender systems, I'll use a "popularity" recommender; a collaborative filtering system with no other user/item features; a content-filtering system with only text features. From there, the system complexity will grow as more features get added. The final system will be set/sequence based learning with all user/item features that improve performance. 
+
+\section{Summary of Progress} 
+
+So far, I've gathered all the datasets mentioned in section 2. I've begun testing BERT-base using various layer embeddings on the GLUE SST-2 task. I have "a simple" sentence embeddings based on BERT-base hidden layer states ready to test.
+
+Most importantly, I got my home computer repaired so that my GPU is usable again. 
+
+I have yet to develop any recommenders, but I found various python libraries that will help\footnote[2]{\href{https://github.com/benfred/implicit}{Implicit} from a friend of mine; there are many others and I may just want to code the simpler ones from scratch anyway.}. 
+
+The biggest unknowns at this point are how large the recommender + dataset can be for my system. I can always subset (by date or region) to iterate faster in the beginning and scale up for final evaluations.
+
+\bibliography{project}
+
+% \appendix
+
+% \section{Example Appendix}\label{sec:appendix}
+
+% This is an appendix.
+
+\end{document}
