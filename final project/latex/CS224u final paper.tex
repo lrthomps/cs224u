@@ -2,7 +2,7 @@
 \pdfoutput=1
 % In particular, the hyperref package requires pdfLaTeX in order to break URLs across lines.
 
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 
 % Remove the "review" option to generate the final version.
 \usepackage[]{acl}
@@ -10,6 +10,7 @@
 % Standard package includes
 \usepackage{times}
 \usepackage{latexsym}
+\usepackage{amsmath}
 
 % For proper rendering and hyphenation of words containing Latin characters (including in bib files)
 \usepackage[T1]{fontenc}
@@ -24,40 +25,14 @@
 % but it will improve the layout of the manuscript,
 % and will typically save some space.
 \usepackage{microtype}
+\usepackage[hang,flushmargin]{footmisc}
 
-% If the title and author information does not fit in the area allocated, uncomment the following
-%
-%\setlength\titlebox{<dim>}
-%
-% and set <dim> to something 5cm or larger.
+\title{Title CS224u final paper}
 
-\title{Template for CS224u final papers}
-
-% Author information can be set in various styles:
-% For several authors from the same institution:
-% \author{Author 1 \and ... \and Author n \\
-%         Address line \\ ... \\ Address line}
-% if the names do not fit well on one line use
-%         Author 1 \\ {\bf Author 2} \\ ... \\ {\bf Author n} \\
-% For authors from different institutions:
-% \author{Author 1 \\ Address line \\  ... \\ Address line
-%         \And  ... \And
-%         Author n \\ Address line \\ ... \\ Address line}
-% To start a seperate ``row'' of authors use \AND, as in
-% \author{Author 1 \\ Address line \\  ... \\ Address line
-%         \AND
-%         Author 2 \\ Address line \\ ... \\ Address line \And
-%         Author 3 \\ Address line \\ ... \\ Address line}
-
-\author{First Author \\
-  Affiliation / Address \\
-  \texttt{email@domain} \\\And
-  Second Author \\
-  Affiliation / Address  \\  
-  \texttt{email@domain} \\\And
-  Third Author \\
-  Affiliation / Address \\  
-  \texttt{email@domain}
+\author{Lara Thompson \\
+  Principle Data Scientist @ Salesforce \\
+  \texttt{lara.thompson@salesforce.com} \\ \\
+  \today
 }
 
 \begin{document}
@@ -76,11 +51,7 @@ Brief statement %providing context for your ideas, and then a high-level summary
 
 % If you have additional questions about requirements for style, formatting, length, etc., please refer to the ACL guidelines: \url{https://acl-org.github.io/ACLPUB/formatting.html}. Unless otherwise specified, we will adopt their requirements.
 
-The consensus is that collaborative filtering will generally outperform content-based recommenda-
-tion [1]. However, it is only applicable when usage data is available. Collaborative filtering suffers
-from the cold start problem: new items that have not been consumed before cannot be recommended.
-Additionally, items that are only of interest to a niche audience are more difficult to recommend be-
-cause usage data is scarce
+The consensus is that collaborative filtering will generally outperform content-based recommendation [1]. However, it is only applicable when usage data is available. Collaborative filtering suffers from the cold start problem: new items that have not been consumed before cannot be recommended. Additionally, items that are only of interest to a niche audience are more difficult to recommend because usage data is scarce
 
 \section{Prior Literature}
 
@@ -89,6 +60,7 @@ This section can make extensive use of your lit review prose. \cite{Arora2017}
 \section{Data}
 
 Likely to be very detailed if the datasets are new or unfamiliar to the community, or if familiar datasets are being used in new ways.
+Includes prior work on them, statistics, and a collection protocol. 
 
 \section{Model}
 
@@ -97,6 +69,8 @@ Flesh out your own approach, perhaps amplifying themes from the `Prior lit' sect
 \section{Methods}
 
 The experimental approach, including descriptions of metrics, baseline models, etc. Details about hyperparameters, optimization choices, etc., are probably best given in appendices, unless they are central to the arguments.
+
+Explicitly define the metrics, even the common ones (or at least reference them). Be clear about how the data is split for assessment. 
 
 \section{Results} 
 
