@@ -39,10 +39,6 @@ def process(climbs, ascents, filename=None):
     ascents_df['grade'] = ascents_df['grade'].astype("category")
     ascents_df['user'] = ascents_df['user'].astype(str)
 
-    # can I automatically detect the bad dates??
-    # ascents_df.loc[ascents_df['date']=='0202-05-30 ', 'date'] = '2020-05-30'
-    # ascents_df.loc[ascents_df['date']=='0201-09-03 ', 'date'] = '2010-09-03'
-    # ascents_df['date'] = pd.to_datetime(ascents_df['date'])
     success = False
     bad_ids = []
     while not success:
@@ -89,12 +85,12 @@ def process(climbs, ascents, filename=None):
     return climbs_df, ascents_df
 
 
-def combine_areas(areas, date='2023-03-26'):
+def combine_areas(areas, date='2023-03-26', path=''):
     climb_dfs = []
     ascent_dfs = []
     for area in areas:
         print(f'Processing {area}')
-        climbs, ascents = pickle.load(open(f'{date}_{area}_climbs_ascents.p', 'rb'))
+        climbs, ascents = pickle.load(open(f'{path}{date}_{area}_climbs_ascents.p', 'rb'))
         climbs_df, ascents_df = process(climbs, ascents)
         climb_dfs.append(climbs_df)
         ascent_dfs.append(ascents_df)
@@ -108,7 +104,8 @@ def combine_areas(areas, date='2023-03-26'):
 
 
     conn_climbs, conn_climbers = connected_climbs(ascents_df)
-    print(len(conn_climbers)/len(climbers_df), len(conn_climbs)/len(climbs_df))
+    print(f'fraction connected climbers {len(conn_climbers)/len(climbers_df)}; '
+          f'fraction connected climbs {len(conn_climbs)/len(climbs_df)}')
     climbs_df['connected'] = np.isin(climbs_df.index, conn_climbs)
     climbers_df['connected'] = np.isin(climbers_df['name'], conn_climbers)
 
@@ -118,7 +115,36 @@ def combine_areas(areas, date='2023-03-26'):
     
     conn_bs, conn_bers = connected_climbs(bascents_df)
     print(len(conn_bers)/len(bascents_df['user'].unique()), len(conn_bs)/len(boulders))
+    print(f'fraction connected boulderers {len(conn_bers)/len(bascents_df['user'].unique())}; '
+          f'fraction connected boulders {len(conn_bs)/len(boulders)}')
     boulders['connected'] = np.isin(boulders.index, conn_bs)
     climbers_df['b_connected'] = np.isin(climbers_df['name'], conn_bers)
 
     return climbs_df, ascents_df, climbers_df, boulders
+
+
+def self_consistent_min(ascents, climbers, climbs, n_min=5):
+    n_climbs, n_climbers = len(climbs), len(climbers)
+    print(n_climbs, n_climbers)
+    while (len(climbs) < n_climbs) or (len(climbers) < n_climbers):
+        n_climbs, n_climbers = len(climbs), len(climbers)
+        print(n_climbs, n_climbers)
+        
+        # update ascents
+        ascents = ascents[np.isin(ascents['user'], climbers.index)]
+        ascents = ascents[np.isin(ascents['climb_id'], climbs.index)]
+        
+        # update climbers
+        climbers_, counts = np.unique(ascents['user'], return_counts=True)
+        climbers = climbers.loc[climbers_[counts >= n_min]]
+        climbers['# sends'] = counts[counts >= n_min]
+        
+        # update climbs
+        climb_styles = ascents.groupby(['climb_id', 'style'])['user'].count().reset_index().pivot(
+            index='climb_id', columns='style', values='user').fillna(0)
+        climb_styles['# sends'] = climb_styles.sum(axis=1)
+        climb_styles = climb_styles[climb_styles['# sends']>=n_min]
+        climbs = climbs.loc[climb_styles.index]
+        climbs[climb_styles.columns] = climb_styles
+    print(len(climbs), len(climbers))
+    return ascents, climbers, climbs
