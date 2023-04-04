@@ -115,7 +115,7 @@ def combine_areas(areas, date='2023-03-26', path=''):
     
     conn_bs, conn_bers = connected_climbs(bascents_df)
     print(len(conn_bers)/len(bascents_df['user'].unique()), len(conn_bs)/len(boulders))
-    print(f'fraction connected boulderers {len(conn_bers)/len(bascents_df['user'].unique())}; '
+    print(f'fraction connected boulderers {len(conn_bers)/len(bascents_df["user"].unique())}; '
           f'fraction connected boulders {len(conn_bs)/len(boulders)}')
     boulders['connected'] = np.isin(boulders.index, conn_bs)
     climbers_df['b_connected'] = np.isin(climbers_df['name'], conn_bers)
