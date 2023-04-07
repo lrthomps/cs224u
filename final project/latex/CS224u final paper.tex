@@ -27,7 +27,7 @@
 \usepackage{microtype}
 \usepackage[hang,flushmargin]{footmisc}
 
-\title{Title CS224u final paper}
+\title{Sequence Recommender with Item and User Embeddings}
 
 \author{Lara Thompson \\
   Principle Data Scientist @ Salesforce \\
@@ -38,7 +38,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-Brief statement %providing context for your ideas, and then a high-level summary of what you did and its significance. This is a required section.
+Many recommendations rely on the sequence of interactions between users and items. User tastes and abilities evolve in time; for items that rely on a skill level, such as bouldering or children's reading, a good sequence of items (boulder problems or books) can be key in skill development. In this paper, we explore common models from natural language processing applied to a skill progression based space of times: the CBOW model of word2vec \cite{word2vec}, a simple recurrent model that accounts for sequence ordering, and a transformer model that attentively accounts for sequence ordering. The recommendation objective can be either next item or the sequence of items that best lead up to a final "goal" item. User and item features generally improve the accuracy of the sequence model. A transformer model that dually trains item and user embeddings and leverages item features can predict next item with accuracy nearing 25\% for BC boulder problems (compared to  using collaborative filtering).
 \end{abstract}
 
 \section{Introduction}
@@ -90,16 +90,14 @@ For this section, imagine that your reader is a well-intentioned NLP practitione
 
 \section*{Authorship Statement}
 
-Explain how the individual authors contributed to the
-project. You are free to include whatever information you deem important to convey. For ideas and a model see \url{http://blog.pnas.org/iforc.pdf} (p.~12).
-This statement is required even for singly-authored papers, because we want to know whether your project is a collaboration with people outside of the class. Our rationale for this section is that we think this is an important aspect of scholarship in general. Only in extreme cases, and after discussion with the team, would we consider giving separate grades to team members based on this statement.
+I worked on this project solo including the literature review, the iterative implementation and experimentation, result gathering and final writing up. I had many fruitful conversations with Alistair Fraser, also taking the course, and Michael Nathe about my design choices and result analysis. 
 
 \bibliography{project}
 
-\appendix
+% \appendix
 
-\section{Example Appendix}\label{sec:appendix}
+% \section{Example Appendix}\label{sec:appendix}
 
-This is an appendix.
+% This is an appendix.
 
 \end{document}
