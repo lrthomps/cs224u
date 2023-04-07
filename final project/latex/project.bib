@@ -356,3 +356,102 @@ location = {Amsterdam, Netherlands},
 series = {RecSys '21},
 note = "\url{https://github.com/NVIDIA-Merlin/Transformers4Rec}"
 }
+
+@inproceedings{BERT4Rec,
+author = {Sun, Fei and Liu, Jun and Wu, Jian and Pei, Changhua and Lin, Xiao and Ou, Wenwu and Jiang, Peng},
+title = {BERT4Rec: Sequential Recommendation with Bidirectional Encoder Representations from Transformer},
+year = {2019},
+isbn = {9781450369763},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3357384.3357895},
+doi = {10.1145/3357384.3357895},
+abstract = {Modeling users' dynamic preferences from their historical behaviors is challenging and crucial for recommendation systems. Previous methods employ sequential neural networks to encode users' historical interactions from left to right into hidden representations for making recommendations. Despite their effectiveness, we argue that such left-to-right unidirectional models are sub-optimal due to the limitations including: begin enumerate* [label=seriesitshapealph*upshape)] item unidirectional architectures restrict the power of hidden representation in users' behavior sequences; item they often assume a rigidly ordered sequence which is not always practical. end enumerate* To address these limitations, we proposed a sequential recommendation model called BERT4Rec, which employs the deep bidirectional self-attention to model user behavior sequences. To avoid the information leakage and efficiently train the bidirectional model, we adopt the Cloze objective to sequential recommendation, predicting the random masked items in the sequence by jointly conditioning on their left and right context. In this way, we learn a bidirectional representation model to make recommendations by allowing each item in user historical behaviors to fuse information from both left and right sides. Extensive experiments on four benchmark datasets show that our model outperforms various state-of-the-art sequential models consistently.},
+booktitle = {Proceedings of the 28th ACM International Conference on Information and Knowledge Management},
+pages = {1441–1450},
+numpages = {10},
+keywords = {sequential recommendation, bidirectional sequential model, cloze},
+location = {Beijing, China},
+series = {CIKM '19}
+}
+
+@inproceedings{SAS4Rec,
+author = {Kang, Wang-Cheng and McAuley, Julian},
+year = {2018},
+month = {11},
+pages = {197-206},
+title = {Self-Attentive Sequential Recommendation},
+doi = {10.1109/ICDM.2018.00035}
+}
+
+@article{GRU4Rec,
+author = {Hidasi, Balázs and Karatzoglou, Alexandros and Baltrunas, Linas and Tikk, Domonkos},
+year = {2015},
+month = {11},
+pages = {},
+title = {Session-based Recommendations with Recurrent Neural Networks}
+}
+
+@article{GRU4Rec+,
+author = {Hidasi, Balázs and Karatzoglou, Alexandros},
+year = {2017},
+month = {06},
+pages = {},
+title = {Recurrent Neural Networks with Top-k Gains for Session-based Recommendations}
+}
+
+
+@inproceedings{SSE-PT,
+author = {Wu, Liwei and Li, Shuqing and Hsieh, Cho-Jui and Sharpnack, James},
+title = {SSE-PT: Sequential Recommendation Via Personalized Transformer},
+year = {2020},
+isbn = {9781450375832},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3383313.3412258},
+doi = {10.1145/3383313.3412258},
+abstract = {Temporal information is crucial for recommendation problems because user preferences are naturally dynamic in the real world. Recent advances in deep learning, especially the discovery of various attention mechanisms and newer architectures in addition to widely used RNN and CNN in natural language processing, have allowed for better use of the temporal ordering of items that each user has engaged with. In particular, the SASRec model, inspired by the popular Transformer model in natural languages processing, has achieved state-of-the-art results. However, SASRec, just like the original Transformer model, is inherently an un-personalized model and does not include personalized user embeddings. To overcome this limitation, we propose a Personalized Transformer (SSE-PT) model, outperforming SASRec by almost 5% in terms of NDCG@10 on 5 real-world datasets. Furthermore, after examining some random users’ engagement history, we find our model not only more interpretable but also able to focus on recent engagement patterns for each user. Moreover, our SSE-PT model with a slight modification, which we call SSE-PT++, can handle extremely long sequences and outperform SASRec in ranking results with comparable training speed, striking a balance between performance and speed requirements. Our novel application of the Stochastic Shared Embeddings (SSE) regularization is essential to the success of personalization. Code and data are open-sourced at https://github.com/wuliwei9278/SSE-PT.},
+booktitle = {Proceedings of the 14th ACM Conference on Recommender Systems},
+pages = {328–337},
+numpages = {10},
+keywords = {temporal collaborative ranking, recommender system, stochastic shared embeddings, neural networks, personalized transformer, sequential recommendation},
+location = {Virtual Event, Brazil},
+series = {RecSys '20}
+}
+
+@inproceedings{gpt2,
+  title={Language Models are Unsupervised Multitask Learners},
+  author={Alec Radford and Jeff Wu and Rewon Child and David Luan and Dario Amodei and Ilya Sutskever},
+  year={2019}
+}
+
+
+@inproceedings{AttentionAll,
+	author = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, \L ukasz and Polosukhin, Illia},
+	booktitle = {Advances in Neural Information Processing Systems},
+	editor = {I. Guyon and U. Von Luxburg and S. Bengio and H. Wallach and R. Fergus and S. Vishwanathan and R. Garnett},
+	publisher = {Curran Associates, Inc.},
+	title = {Attention is All you Need},
+	url = {https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf},
+	volume = {30},
+	year = {2017},
+	bdsk-url-1 = {https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf}}
+
+
+@inproceedings{FPMC,
+author = {Rendle, Steffen and Freudenthaler, Christoph and Schmidt-Thieme, Lars},
+title = {Factorizing Personalized Markov Chains for Next-Basket Recommendation},
+year = {2010},
+isbn = {9781605587998},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/1772690.1772773},
+doi = {10.1145/1772690.1772773},
+abstract = {Recommender systems are an important component of many websites. Two of the most popular approaches are based on matrix factorization (MF) and Markov chains (MC). MF methods learn the general taste of a user by factorizing the matrix over observed user-item preferences. On the other hand, MC methods model sequential behavior by learning a transition graph over items that is used to predict the next action based on the recent actions of a user. In this paper, we present a method bringing both approaches together. Our method is based on personalized transition graphs over underlying Markov chains. That means for each user an own transition matrix is learned - thus in total the method uses a transition cube. As the observations for estimating the transitions are usually very limited, our method factorizes the transition cube with a pairwise interaction model which is a special case of the Tucker Decomposition. We show that our factorized personalized MC (FPMC) model subsumes both a common Markov chain and the normal matrix factorization model. For learning the model parameters, we introduce an adaption of the Bayesian Personalized Ranking (BPR) framework for sequential basket data. Empirically, we show that our FPMC model outperforms both the common matrix factorization and the unpersonalized MC model both learned with and without factorization.},
+booktitle = {Proceedings of the 19th International Conference on World Wide Web},
+pages = {811–820},
+numpages = {10},
+keywords = {basket recommendation, matrix factorization, markov chain},
+location = {Raleigh, North Carolina, USA},
+series = {WWW '10}
+}
