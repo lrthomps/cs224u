@@ -455,3 +455,80 @@ keywords = {basket recommendation, matrix factorization, markov chain},
 location = {Raleigh, North Carolina, USA},
 series = {WWW '10}
 }
+
+@inbook{SSE,
+author = {Wu, Liwei and Li, Shuqing and Hsieh, Cho-Jui and Sharpnack, James},
+title = {Stochastic Shared Embeddings: Data-Driven Regularization of Embedding Layers},
+year = {2019},
+publisher = {Curran Associates Inc.},
+address = {Red Hook, NY, USA},
+abstract = {In deep neural nets, lower level embedding layers account for a large portion of the total number of parameters. Tikhonov regularization, graph-based regularization, and hard parameter sharing are approaches that introduce explicit biases into training in a hope to reduce statistical complexity. Alternatively, we propose stochastic shared embeddings (SSE), a data-driven approach to regularizing embedding layers, which stochastically transitions between embeddings during stochastic gradient descent (SGD). Because SSE integrates seamlessly with existing SGD algorithms, it can be used with only minor modifications when training large scale neural networks. We develop two versions of SSE: SSE-Graph using knowledge graphs of embeddings; SSE-SE using no prior information. We provide theoretical guarantees for our method and show its empirical effectiveness on 6 distinct tasks, from simple neural networks with one hidden layer in recommender systems, to the transformer and BERT in natural languages. We find that when used along with widely-used regularization methods such as weight decay and dropout, our proposed SSE can further reduce overfitting, which often leads to more favorable generalization results.},
+booktitle = {Proceedings of the 33rd International Conference on Neural Information Processing Systems},
+articleno = {3},
+numpages = {11}
+}
+
+@inproceedings{whySA,
+    title = "Why Self-Attention? A Targeted Evaluation of Neural Machine Translation Architectures",
+    author = {Tang, Gongbo  and
+      M{\"u}ller, Mathias  and
+      Rios, Annette  and
+      Sennrich, Rico},
+    booktitle = "Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing",
+    month = oct # "-" # nov,
+    year = "2018",
+    address = "Brussels, Belgium",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/D18-1458",
+    doi = "10.18653/v1/D18-1458",
+    pages = "4263--4272",
+    abstract = "Recently, non-recurrent architectures (convolutional, self-attentional) have outperformed RNNs in neural machine translation. CNNs and self-attentional networks can connect distant words via shorter network paths than RNNs, and it has been speculated that this improves their ability to model long-range dependencies. However, this theoretical argument has not been tested empirically, nor have alternative explanations for their strong performance been explored in-depth. We hypothesize that the strong performance of CNNs and self-attentional networks could also be due to their ability to extract semantic features from the source text, and we evaluate RNNs, CNNs and self-attention networks on two tasks: subject-verb agreement (where capturing long-range dependencies is required) and word sense disambiguation (where semantic feature extraction is required). Our experimental results show that: 1) self-attentional networks and CNNs do not outperform RNNs in modeling subject-verb agreement over long distances; 2) self-attentional networks perform distinctly better than RNNs and CNNs on word sense disambiguation.",
+}
+
+
+@inbook{XLNet,
+author = {Yang, Zhilin and Dai, Zihang and Yang, Yiming and Carbonell, Jaime and Salakhutdinov, Ruslan and Le, Quoc V.},
+title = {XLNet: Generalized Autoregressive Pretraining for Language Understanding},
+year = {2019},
+publisher = {Curran Associates Inc.},
+address = {Red Hook, NY, USA},
+abstract = {With the capability of modeling bidirectional contexts, denoising autoencoding based pretraining like BERT achieves better performance than pretraining approaches based on autoregressive language modeling. However, relying on corrupting the input with masks, BERT neglects dependency between the masked positions and suffers from a pretrain-finetune discrepancy. In light of these pros and cons, we propose XLNet, a generalized autoregressive pretraining method that (1) enables learning bidirectional contexts by maximizing the expected likelihood over all permutations of the factorization order and (2) overcomes the limitations of BERT thanks to its autoregressive formulation. Furthermore, XLNet integrates ideas from Transformer-XL, the state-of-the-art autoregressive model, into pretraining. Empirically, under comparable experiment setting, XLNet outperforms BERT on 20 tasks, often by a large margin, including question answering, natural language inference, sentiment analysis, and document ranking.},
+booktitle = {Proceedings of the 33rd International Conference on Neural Information Processing Systems},
+articleno = {517},
+numpages = {11}
+}
+
+@inproceedings{ELECTRA,
+  author    = {Kevin Clark and
+               Minh{-}Thang Luong and
+               Quoc V. Le and
+               Christopher D. Manning},
+  title     = {{ELECTRA:} Pre-training Text Encoders as Discriminators Rather Than
+               Generators},
+  booktitle = {8th International Conference on Learning Representations, {ICLR} 2020,
+               Addis Ababa, Ethiopia, April 26-30, 2020},
+  publisher = {OpenReview.net},
+  year      = {2020},
+  url       = {https://openreview.net/forum?id=r1xMH1BtvB},
+  timestamp = {Thu, 07 May 2020 17:11:48 +0200},
+  biburl    = {https://dblp.org/rec/conf/iclr/ClarkLLM20.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@inproceedings{BST,
+author = {Chen, Qiwei and Zhao, Huan and Li, Wei and Huang, Pipei and Ou, Wenwu},
+title = {Behavior Sequence Transformer for E-Commerce Recommendation in Alibaba},
+year = {2019},
+isbn = {9781450367837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3326937.3341261},
+doi = {10.1145/3326937.3341261},
+abstract = {Deep learning based methods have been widely used in industrial recommendation systems (RSs). Previous works adopt an Embedding&amp;MLP paradigm: raw features are embedded into low-dimensional vectors, which are then fed on to MLP for final recommendations. However, most of these works just concatenate different features, ignoring the sequential nature of users' behaviors. In this paper, we propose to use the powerful Transformer model to capture the sequential signals underlying users' behavior sequences for recommendation in Alibaba. Experimental results demonstrate the superiority of the proposed model, which is then deployed online at Taobao and obtain significant improvements in online Click-Through-Rate (CTR) comparing to two baselines.},
+booktitle = {Proceedings of the 1st International Workshop on Deep Learning Practice for High-Dimensional Sparse Data},
+articleno = {12},
+numpages = {4},
+location = {Anchorage, Alaska},
+series = {DLP-KDD '19}
+}
