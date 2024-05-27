@@ -1,6 +1,4 @@
-% This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended.
 \pdfoutput=1
-% In particular, the hyperref package requires pdfLaTeX in order to break URLs across lines.
 
 \documentclass[10pt]{article}
 
@@ -198,7 +196,7 @@ The data supports longer sequences, but my system wasn't stable enough to train 
 
 The Transformers4Rec analysis showed that MLM performed best, and it's only a small change to my pipeline; also, they showed that numerical features were easier to learn from binned and one-hot encoded. Masking longer contiguous sections to enable such recommendations would be more useful for the climber targeting a specific project but lacking the skills to complete it. The chain of boulder problems recommended, if completed, should allow the climber to gain these skills.  
 
-The time elapsed should not be a separate numerical feature, but rather it should be used to in place of sequence order in the position embeddings. This should naturally model the climbs as a sequence of sessions. 
+The time elapsed should not be a separate numerical feature, but rather it should be used to enforce sequence order in the position embeddings. This should naturally model the climbs as a sequence of sessions. 
 
 Finally, it would be fascinating to add text embeddings of logged comments and beta. I expect the model can learn from, e.g. "Intimidating landing but secure moves.", "High sit start on jug rail, mantle exit. Reachy." or "Definitely suited me, all of the difficulty in the 1st move. Psyched!"
 

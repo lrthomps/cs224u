@@ -1,3 +1,4 @@
+import glob
 import numpy as np
 import pandas as pd
 import pickle
@@ -43,7 +44,7 @@ def process(climbs, ascents, filename=None):
     bad_ids = []
     while not success:
         try:
-            ascents_df['date'] = pd.to_datetime(ascents_df['date'])
+            ascents_df['date'] = pd.to_datetime(ascents_df['date'], format='mixed')
         except pd.errors.OutOfBoundsDatetime as e:
             pos = int(str(e).split(' ')[-1])
             bad_ids.append(ascents_df.iloc[pos].name)
@@ -85,17 +86,18 @@ def process(climbs, ascents, filename=None):
     return climbs_df, ascents_df
 
 
-def combine_areas(areas, date='2023-03-26', path=''):
+def combine_areas(path, date='2023-03-26'):
     climb_dfs = []
     ascent_dfs = []
-    for area in areas:
+    for f in glob.glob(f'{path}{date}_*_climbs_ascents.p'):
+        area = f[22:-17]
         print(f'Processing {area}')
         climbs, ascents = pickle.load(open(f'{path}{date}_{area}_climbs_ascents.p', 'rb'))
         climbs_df, ascents_df = process(climbs, ascents)
         climb_dfs.append(climbs_df)
         ascent_dfs.append(ascents_df)
     
-    print(f'Combining {areas}')
+    print(f'Combining areas')
     ascents_df = pd.concat(ascent_dfs, axis=0, ignore_index=True)
     climbs_df = pd.concat(climb_dfs, axis=0)
     
